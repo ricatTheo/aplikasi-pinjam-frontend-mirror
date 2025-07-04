@@ -1,0 +1,204 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 30%;
+    position: sticky;
+    top: 0;
+    z-index: 1000; 
+}
+
+.logo{
+    width: 200px;
+    cursor: pointer;
+}
+
+.middle-navbar {
+  border: 2px solid black; 
+  height: 70px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  border-radius: 40px;
+  background-color: white;
+}
+
+.middle-navbar ul{
+    display: flex;
+    list-style: none;
+    gap: 150px;
+    justify-content: space-evenly;
+}
+.middle-navbar ul li a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  border-radius: 20px;
+  background-color: transparent;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.middle-navbar ul li a:hover {
+  background-color: #f0f0f0;
+}
+
+.nav-link.active {
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.right-navbar{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.logout-btn {
+  width: 70px;
+  height: 40px;
+  padding: 3px;
+  background: none;
+  border: 1px solid black; 
+  cursor: pointer;
+  outline: none; 
+  border-radius: 8px;
+}
+
+.logout-btn:hover{
+    background-color: black;
+    color: white;
+    transition: 0.3s;
+}
+
+.fa-solid fa-circle-user{
+    width: 100px;
+}
+
+.nav-link.active {
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  padding: 10px 20px;
+  transition: 0.3s;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+    margin-bottom: 40px;
+}
+
+.room-card {
+  display: flex;
+  gap: 100px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  width: 1000px;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  margin-bottom: 35px;
+}
+
+.room-image{
+    border-radius: 10px;
+    width: fit-content;
+    width: 400px;
+}
+
+.room-content a{
+    text-decoration: none;
+    color: #00bfff;
+}
+
+.room-content h3{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.facilities, .seats {
+  margin-top: 20px;
+}
+
+.seats{
+    margin-bottom: 5px;
+}
+
+.book-btn {
+  margin-top: 25px;
+  background-color: #ff5722;
+  color: white;
+  padding: 3px 40px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  height: 70px;
+  font-size: 15px;
+}
+
+.book{
+    display: flex;
+    justify-content: center;
+}
+.book-btn:hover {
+  background-color: #e64a19;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.pagination a {
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+  margin: 0 4px;
+  border-radius: 5px;
+}
+
+.pagination a.active {
+  background-color: #ff5722;
+  color: white;
+  border: 1px solid #ff5722;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
