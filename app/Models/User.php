@@ -20,7 +20,6 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
-        'password',
     ];
 
     /**
@@ -29,10 +28,9 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $hidden = [
-        'password',
         'remember_token',
     ];
-
+ 
     /**
      * Get the attributes that should be cast.
      *
@@ -42,7 +40,12 @@ class User extends Authenticatable
     {
         return [
             'email_verified_at' => 'datetime',
-            'password' => 'hashed',
         ];
     }
+
+    //Helper buat bikin function check role di controller (optional karena table user semua isinya admin)
+    // public function isAdmin()
+    // {
+    //     return $this->role === 'admin';
+    // }
 }

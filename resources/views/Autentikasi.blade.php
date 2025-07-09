@@ -17,14 +17,14 @@
             <h2>Login</h2>
             <h6>World Vision of Indonesia</h6>
               <div class="button-group">
-                <button type="button" class="satuPintu">Satu Pintu</button>
-                <button type="button" class="guest" id="guestPinjam">Guest</button>
+                <button type="button" class="satuPintu" onclick="window.location.href='{{ route('login') }}'">Satu Pintu</button>
+                <button type="button" class="guest" onclick="window.location.href='{{ route('ruanganAku') }}'" id="guestPinjam">Guest</button>
               </div>
           </div>
         </div>
       </div> 
       <script>
-        const ruanganUrl = "{{ route('RuanganAku') }}";
+        route RuanganAku
       </script>
       <script src="/Js/Autentikasi.js"></script>    
 </body>

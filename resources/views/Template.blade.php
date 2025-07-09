@@ -18,35 +18,39 @@
         <div class="middle-navbar">
             <ul>
                 <li>
-                    <a href="{{ route('RuanganAku') }}"
-                       class="nav-link {{ request()->routeIs('RuanganAku') ? 'active' : '' }}"
+                    <a href="{{ route('ruanganAku') }}"
+                       class="nav-link {{ request()->routeIs('ruanganAku') ? 'active' : '' }}"
                        data-id="ruangan">
                        Ruangan
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('KendaraanAku') }}"
-                       class="nav-link {{ request()->routeIs('KendaraanAku') ? 'active' : '' }}"
+                    <a href="{{ route('kendaraanAku') }}"
+                       class="nav-link {{ request()->routeIs('kendaraanAku') ? 'active' : '' }}"
                        data-id="kendaraan">
                        Kendaraan
                     </a>
                 </li>
-                <li><a href="{{ route('BarangAku')}}" 
-                       class="nav-link {{ request()->routeIs('BarangAku') ? 'active' : ''}}" 
+                <li><a href="{{ route('barangAku')}}" 
+                       class="nav-link {{ request()->routeIs('barangAku') ? 'active' : ''}}" 
                        data-id="barang">Barang</a></li>
                 <li><a href="#" class="nav-link" data-id="booking">My Booking</a></li>
             </ul>
         </div>
 
         <div class="right-navbar">
-            <button class="logout-btn" id="OutButton">Log out</button>
-            <i class="fa-solid fa-circle-user fa-2x"></i>
+            @if(Auth::check() || session('staff_logged_in'))
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+                <button class="logout-btn" id="OutButton">Log out</button> 
+            @endif
         </div>
     </div>
     <script src="/Js/Main.js"></script> 
     @yield('content')
     <script>
-        const LogoutUrl = "{{ route('Autentikasi') }}";
+        const LogoutUrl = "{{ route('autentikasi') }}";
     </script>
     <script src="/Js/Logout.js"></script>
 </body>

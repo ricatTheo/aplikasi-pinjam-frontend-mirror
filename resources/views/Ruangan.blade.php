@@ -4,7 +4,32 @@
 
 <div class="container">
     <!-- Room Card 1 -->
-    <div class="room-card">
+    @foreach ($ruangans as $ruang)
+        <div class="room-card">
+            <img src="/image/download.jpeg" alt="Ruangan Papua" class="room-image">
+            <div class="room-content">
+                <h3>{{ $ruang->nama }}</h3>
+                <p class="location">
+                    <i style="color: #00bfff;" class="fa-solid fa-location-dot"></i>
+                    <a href="#">{{ $ruang->lokasi }}</a>
+                </p>
+                <p class="facilities">
+                @forelse ($ruang->fasilitas as $f)
+                    {{ $f->nama }}
+                @empty
+                    Tidak ada fasilitas
+                @endforelse
+                </p>
+                <p class="seats">
+                    <i class="fa-solid fa-chair"></i> {{ $ruang->jumlahKursi }}
+                </p>
+                <div class="book">
+                    <button class="book-btn">Book</button>
+                </div>
+            </div>
+        </div>
+    @endforeach
+    {{-- <div class="room-card">
         <img src="/image/download.jpeg" alt="Ruangan Papua" class="room-image">
         <div class="room-content">
             <h3>Ruangan Papua</h3>
@@ -112,6 +137,6 @@
             <a href="#" class="active">1</a>
             <a href="#">2</a>
             <a href="#">&raquo;</a>
-        </div>
+        </div> --}}
 </div>
 @endsection
