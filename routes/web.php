@@ -4,6 +4,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\Auth\SSOController;
+use App\Http\Controllers\BarangController;
+use App\Http\Controllers\KendaraanController;
 use App\Http\Controllers\RuanganController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,14 +23,8 @@ Route::get('/', function () {
 })->name('autentikasi');
 
 Route::get('/Ruangan', [RuanganController::class, 'index'])->name('ruanganAku');
-    
-Route::get('/Kendaraan',function(){
-    return view('kendaraan');
-})->name('kendaraanAku');
-
-Route::get('/Barang',function(){
-    return view('barang');
-})->name('barangAku');
+Route::get('/Barang', [BarangController::class, 'index'])->name('barangAku');
+Route::get('/Kendaraan', [KendaraanController::class, 'index'])->name('kendaraanAku');
 
 Route::get('/login-sso', function(){
     return redirect("https://satupintu.wahanavisi.org/login?app_id=TestPinjam");

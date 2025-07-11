@@ -24,6 +24,10 @@ class DatabaseSeeder extends Seeder
             FasilitasSeeder::class,
             RuanganSeeder::class,
             RuanganFasilitasSeeder::class,
+            KendaraanSpesifikasiSeeder::class,
+            KendaraanSeeder::class,
+            SpesifikasiSeeder::class,
+            BarangSeeder::class,
         ]);
 
     }
